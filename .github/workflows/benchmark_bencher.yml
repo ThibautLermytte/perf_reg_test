@@ -16,9 +16,6 @@ jobs:
       - name: Track base branch benchmarks with Bencher
         run: |
           g++ benchmark_game.cpp play_game.cpp -std=c++11 -isystem include/ -L. -lbenchmark -lpthread -o mybenchmark
-          mkdir -p $HOME/.local/bin
-          cp mybenchmark $HOME/.local/bin/
-          echo "$HOME/.local/bin" >> $GITHUB_PATH
           bencher run \
           --project thibaut-lermytte-s-project \
           --token '${{ secrets.BENCHER_API_TOKEN }}' \
