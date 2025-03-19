@@ -13,9 +13,11 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       - uses: bencherdev/bencher@main
-      - name: Track base branch benchmarks with Bencher
+      - name: compile c++ benchmark
         run: |
           g++ benchmark_game.cpp play_game.cpp -std=c++11 -isystem include/ -L. -lbenchmark -lpthread -o mybenchmark
+      - name: Track base branch benchmarks with Bencher
+        run: |
           bencher run \
           --project thibaut-lermytte-s-project \
           --token '${{ secrets.BENCHER_API_TOKEN }}' \
