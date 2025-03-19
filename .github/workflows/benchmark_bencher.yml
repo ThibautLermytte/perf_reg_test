@@ -15,6 +15,7 @@ jobs:
       - uses: bencherdev/bencher@main
       - name: Track base branch benchmarks with Bencher
         run: |
+          g++ benchmark_game.cpp play_game.cpp -std=c++11 -isystem include/  -L. -lbenchmark -lpthread -o mybenchmark
           bencher run \
           --project thibaut-lermytte-s-project \
           --token '${{ secrets.BENCHER_API_TOKEN }}' \
@@ -26,6 +27,5 @@ jobs:
           --threshold-upper-boundary 0.99 \
           --thresholds-reset \
           --err \
-          --adapter json \
+          --adapter cpp_google "./mybenchmark --benchmark_format=json" \
           --github-actions '${{ secrets.GITHUB_TOKEN }}' \
-          bencher mock
