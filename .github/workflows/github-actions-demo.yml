@@ -19,7 +19,7 @@ jobs:
       - name: Track base branch benchmarks with Bencher
         run: |
           cd ${{ github.workspace }}
-          ls .
+          ./mybenchmark
           # bencher run \
           # --project thibaut-lermytte-s-project \
           # --token '${{ secrets.BENCHER_API_TOKEN }}' \
