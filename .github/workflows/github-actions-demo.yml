@@ -29,4 +29,5 @@ jobs:
           --threshold-upper-boundary 0.99 \
           --thresholds-reset \
           --err \
-          --adapter cpp_google "${{ github.workspace }}/mybenchmark --benchmark_form"
+          --adapter cpp_google "${{ github.workspace }}/mybenchmark --benchmark_format=json" \
+          --github-actions '${{ secrets.GITHUB_TOKEN }}' \
