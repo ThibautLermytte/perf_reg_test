@@ -18,17 +18,17 @@ jobs:
           g++ benchmark_game.cpp play_game.cpp -std=c++11 -isystem include/ -L. -lbenchmark -lpthread -o mybenchmark
       - name: Track base branch benchmarks with Bencher
         run: |
-          cd ${{ github.workspace }}
-          bencher run \
-          --project thibaut-lermytte-s-project \
-          --token '${{ secrets.BENCHER_API_TOKEN }}' \
-          --branch main \
-          --testbed ubuntu-latest \
-          --threshold-measure latency \
-          --threshold-test t_test \
-          --threshold-max-sample-size 64 \
-          --threshold-upper-boundary 0.99 \
-          --thresholds-reset \
-          --err \
-          --adapter cpp_google "./mybenchmark --benchmark_format=json" \
-          --github-actions '${{ secrets.GITHUB_TOKEN }}' \
+          ls ${{ github.workspace }}
+          # bencher run \
+          # --project thibaut-lermytte-s-project \
+          # --token '${{ secrets.BENCHER_API_TOKEN }}' \
+          # --branch main \
+          # --testbed ubuntu-latest \
+          # --threshold-measure latency \
+          # --threshold-test t_test \
+          # --threshold-max-sample-size 64 \
+          # --threshold-upper-boundary 0.99 \
+          # --thresholds-reset \
+          # --err \
+          # --adapter cpp_google "./mybenchmark --benchmark_format=json" \
+          # --github-actions '${{ secrets.GITHUB_TOKEN }}' \
