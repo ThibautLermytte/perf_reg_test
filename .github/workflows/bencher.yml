@@ -19,8 +19,6 @@ jobs:
         run: ./mybenchmark --benchmark_out_format=json --benchmark_out=results.json
       - name: Track base branch benchmarks with Bencher
         run: |
-          cd ${{ github.workspace }}
-          ./mybenchmark --benchmark_out_format=json --benchmark_out=results.json
           bencher run \
           --project thibaut-lermytte-s-project \
           --token '${{ secrets.BENCHER_API_TOKEN }}' \
