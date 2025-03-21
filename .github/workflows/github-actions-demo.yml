@@ -19,17 +19,16 @@ jobs:
       - name: Track base branch benchmarks with Bencher
         run: |
           cd ${{ github.workspace }}
-          ./mybenchmark
-          # bencher run \
-          # --project thibaut-lermytte-s-project \
-          # --token '${{ secrets.BENCHER_API_TOKEN }}' \
-          # --branch main \
-          # --testbed ubuntu-latest \
-          # --threshold-measure latency \
-          # --threshold-test t_test \
-          # --threshold-max-sample-size 64 \
-          # --threshold-upper-boundary 0.99 \
-          # --thresholds-reset \
-          # --err \
-          # --adapter cpp_google "./mybenchmark --benchmark_format=json" \
-          # --github-actions '${{ secrets.GITHUB_TOKEN }}' \
+          bencher run \
+          --project thibaut-lermytte-s-project \
+          --token '${{ secrets.BENCHER_API_TOKEN }}' \
+          --branch main \
+          --testbed ubuntu-latest \
+          --threshold-measure latency \
+          --threshold-test t_test \
+          --threshold-max-sample-size 64 \
+          --threshold-upper-boundary 0.99 \
+          --thresholds-reset \
+          --err \
+          --adapter cpp_google "./mybenchmark --benchmark_format=json" \
+          --github-actions '${{ secrets.GITHUB_TOKEN }}' \
