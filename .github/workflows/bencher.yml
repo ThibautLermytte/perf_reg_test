@@ -20,7 +20,7 @@ jobs:
       - name: Track base branch benchmarks with Bencher
         run: |
           bencher run \
-          --project thibaut-lermytte-s-project \
+          --project perf-reg-poc \
           --token '${{ secrets.BENCHER_API_TOKEN }}' \
           --branch main \
           --testbed ubuntu-latest \
