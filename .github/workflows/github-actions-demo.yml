@@ -18,7 +18,8 @@ jobs:
           g++ benchmark_game.cpp play_game.cpp -std=c++11 -isystem include/ -L. -lbenchmark -lpthread -o mybenchmark
       - name: Track base branch benchmarks with Bencher
         run: |
-          ls ${{ github.workspace }}
+          cd ${{ github.workspace }}
+          ls .
           # bencher run \
           # --project thibaut-lermytte-s-project \
           # --token '${{ secrets.BENCHER_API_TOKEN }}' \
