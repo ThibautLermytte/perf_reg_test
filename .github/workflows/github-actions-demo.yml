@@ -31,4 +31,4 @@ jobs:
           --thresholds-reset \
           --err \
           --github-actions '${{ secrets.GITHUB_TOKEN }}' \
-          bencher mock
+          --file results.json
