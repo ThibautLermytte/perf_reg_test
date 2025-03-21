@@ -13,8 +13,10 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       - uses: bencherdev/bencher@main
-      - name: compile c++ benchmark
+      - name: Compile benchmark
         run: g++ benchmark_game.cpp play_game.cpp -std=c++11 -isystem include/ -L. -lbenchmark -lpthread -o mybenchmark
+      - name: Create benchmark result json
+        run: ./mybenchmark --benchmark_out_format=json --benchmark_out=results.json
       - name: Track base branch benchmarks with Bencher
         run: |
           cd ${{ github.workspace }}
