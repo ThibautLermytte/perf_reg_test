@@ -1,24 +1,9 @@
 #include <iostream>
 #include <string>
-
-bool is_fibonacci_number(int n) {
-	for (int i = 0; i <= n; i++) {
-		int previous{0}, current{1};
-
-		while (current < n) {
-			int next{previous + current};
-
-			previous = current;
-			current = next;
-		}
-		if (current == n)
-			return true;
-	}
-	return false;
-}
+#include "is_fibonacci_number.h"
 
 std::string fizz_buzz(int n) {
-	if (is_fibonacci_number(n)) {
+	if (is_fibonacci_number_slow(n)) {
 		return "Fibonacci";
 	} else if (n % 15 == 0) {
 		return "FizzBuzz";
