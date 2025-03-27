@@ -30,18 +30,18 @@ jobs:
           --err \
           --github-actions '${{ secrets.GITHUB_TOKEN }}' \
           --file microbenchmark_results.json
-        - name: Track base branch macro benchmarks with Bencher
-          run: |
-            bencher run \
-            --project ip-week-poc \
-            --token '${{ secrets.BENCHER_API_TOKEN }}' \
-            --branch main \
-            --testbed ubuntu-latest \
-            --threshold-measure latency \
-            --threshold-test t_test \
-            --threshold-max-sample-size 64 \
-            --threshold-upper-boundary 0.99 \
-            --thresholds-reset \
-            --err \
-            --github-actions '${{ secrets.GITHUB_TOKEN }}' \
-            --file macrobenchmark_results.json
+      - name: Track base branch macro benchmarks with Bencher
+        run: |
+          bencher run \
+          --project ip-week-poc \
+          --token '${{ secrets.BENCHER_API_TOKEN }}' \
+          --branch main \
+          --testbed ubuntu-latest \
+          --threshold-measure latency \
+          --threshold-test t_test \
+          --threshold-max-sample-size 64 \
+          --threshold-upper-boundary 0.99 \
+          --thresholds-reset \
+          --err \
+          --github-actions '${{ secrets.GITHUB_TOKEN }}' \
+          --file macrobenchmark_results.json
