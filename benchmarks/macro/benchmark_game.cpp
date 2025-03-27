@@ -2,12 +2,12 @@
 #include <benchmark/benchmark.h>
 #include <iostream>
 
-static void BENCHMARK_game_1_000_000(benchmark::State &state) {
+static void BENCHMARK_game_1_000(benchmark::State &state) {
 	for (auto _ : state) {
-		play_game(1000000, false);
+		play_game(1000, false);
 	}
 }
 
-BENCHMARK(BENCHMARK_game_1_000_000);
+BENCHMARK(BENCHMARK_game_1_000);
 
 BENCHMARK_MAIN();
