@@ -26,7 +26,6 @@ jobs:
           --threshold-test percentage \
           --threshold-max-sample-size 64 \
           --threshold-upper-boundary 0.02 \
-          --threshold-lower-boundary 0.02 \
           --thresholds-reset \
           --err \
           --github-actions '${{ secrets.GITHUB_TOKEN }}' \
