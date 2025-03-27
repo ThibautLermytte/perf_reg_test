@@ -29,7 +29,7 @@ jobs:
           --thresholds-reset \
           --err \
           --github-actions '${{ secrets.GITHUB_TOKEN }}' \
-          --file microbenchmark_results.json
+          --file microbenchmark_result.json
       - name: Track base branch macro benchmarks with Bencher
         run: |
           bencher run \
@@ -44,4 +44,4 @@ jobs:
           --thresholds-reset \
           --err \
           --github-actions '${{ secrets.GITHUB_TOKEN }}' \
-          --file macrobenchmark_results.json
+          --file macrobenchmark_result.json
