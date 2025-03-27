@@ -1,7 +1,7 @@
 MACROBENCH_TARGET	:=	macrobenchmark_game
 MICROBENCH_TARGET	:=	microbenchmark_game
-MACROBENCH_RESULT	:=	macrobnechmark_result.json
-MICROBENCH_RESULT	:=	microbnechmark_result.json
+MACROBENCH_RESULT	:=	macrobenchmark_results.json
+MICROBENCH_RESULT	:=	microbenchmark_results.json
 
 CXXFLAGS		:= 	-std=c++11 -isystem
 LDFLAGS  		:= 	-Llib -lbenchmark -lpthread
