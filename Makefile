@@ -6,7 +6,7 @@ MICROBENCH_RESULT	:=	microbenchmark_results.json
 CXXFLAGS		:= 	-std=c++11 -isystem
 LDFLAGS  		:= 	-Llib -lbenchmark -lpthread
 INCLUDE  		:= 	include/
-BENCH_FLAGS		:=	--benchmark_out_format=json --benchmark_out=
+BENCH_FLAGS		:=	--benchmark_out_format=json --benchmark_min_warmup_time=1 --benchmark_out=
 
 SRC_DIR			:=	src
 BENCH_DIR		:=	benchmarks
