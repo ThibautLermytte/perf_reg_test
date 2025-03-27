@@ -18,7 +18,7 @@ jobs:
       - name: Track base branch micro benchmarks with Bencher
         run: |
           bencher run \
-          --project ip-week-poc \
+          --project perf-reg-poc \
           --token '${{ secrets.BENCHER_API_TOKEN }}' \
           --branch main \
           --testbed ubuntu-latest \
@@ -33,7 +33,7 @@ jobs:
       - name: Track base branch macro benchmarks with Bencher
         run: |
           bencher run \
-          --project ip-week-poc \
+          --project perf-reg-poc \
           --token '${{ secrets.BENCHER_API_TOKEN }}' \
           --branch main \
           --testbed ubuntu-latest \
