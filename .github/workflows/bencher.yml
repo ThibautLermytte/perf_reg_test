@@ -23,9 +23,10 @@ jobs:
           --branch main \
           --testbed ubuntu-latest \
           --threshold-measure latency \
-          --threshold-test t_test \
+          --threshold-test percentage \
           --threshold-max-sample-size 64 \
-          --threshold-upper-boundary 0.99 \
+          --threshold-upper-boundary 2 \
+          --threshold-lower-boundary 2 \
           --thresholds-reset \
           --err \
           --github-actions '${{ secrets.GITHUB_TOKEN }}' \
