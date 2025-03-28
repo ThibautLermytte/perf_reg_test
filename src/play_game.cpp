@@ -3,7 +3,7 @@
 #include "is_fibonacci_number.h"
 
 std::string fizz_buzz(int n) {
-	if (is_fibonacci_number_fast(n)) {
+	if (is_fibonacci_number_slow(n)) {
 		return "Fibonacci";
 	} else if (n % 15 == 0) {
 		return "FizzBuzz";
